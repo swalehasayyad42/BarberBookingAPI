@@ -24,7 +24,7 @@ public class AuthController {
     @Autowired
     private ShopService shopService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+//    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<UserTO>> getAllUsers() throws Exception {
         System.out.println("Received request for all users.");
@@ -37,7 +37,7 @@ public class AuthController {
         return ResponseEntity.ok(users);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+//    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/login")
     public ResponseEntity<UserTO> login(@RequestBody LoginRequest loginRequest) throws Exception {
         System.out.println("Received login request: " + loginRequest);

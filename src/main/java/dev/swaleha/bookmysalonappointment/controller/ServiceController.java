@@ -19,7 +19,7 @@ public class ServiceController {
     @Autowired
     private ShopServiceService serviceService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+//    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/byshopid")
     public ResponseEntity<List<ServiceTO>> getServicesByShopId(@RequestParam("shopId") String shopId) throws Exception {
         List<ServiceTO> services = serviceService.findByShopId(shopId);
