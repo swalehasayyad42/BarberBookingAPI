@@ -14,6 +14,4 @@ public interface UserRepository extends MongoRepository<User, String> {
     Optional<User> findByContact(String contact);
 
     List<User> findByShopId(String shopId);
-    
-    Optional<User> findById(int id);
 }

@@ -12,5 +12,4 @@ public interface UserService {
     UserTO login(String userName, String password) throws Exception;
     UserTO save(RegisterRequest registerRequest) throws Exception;
     List<UserTO> findByShopId(String shopId) throws Exception;
-	void deleteBarber(String id) throws Exception;
 }

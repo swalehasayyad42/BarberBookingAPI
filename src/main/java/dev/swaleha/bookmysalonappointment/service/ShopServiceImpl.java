@@ -6,8 +6,6 @@ import dev.swaleha.bookmysalonappointment.modal.RegisterRequest;
 import dev.swaleha.bookmysalonappointment.modal.ShopTO;
 import dev.swaleha.bookmysalonappointment.modal.UserTO;
 import dev.swaleha.bookmysalonappointment.repository.ShopRepository;
-import dev.swaleha.bookmysalonappointment.repository.ShopServiceRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +20,6 @@ public class ShopServiceImpl implements ShopService {
 
     @Autowired
     private ShopRepository shopRepository;
-    @Autowired
-    private ShopServiceRepository shopServiceRepository;
 
     @Override
     public ShopTO save(RegisterRequest registerRequest) throws Exception {
@@ -66,5 +62,6 @@ public class ShopServiceImpl implements ShopService {
                 })
                 .collect(Collectors.toList());
     }
+
 
 }

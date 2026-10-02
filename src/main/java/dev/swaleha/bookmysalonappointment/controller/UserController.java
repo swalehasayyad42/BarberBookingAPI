@@ -29,14 +29,4 @@ public class UserController {
         }
         return ResponseEntity.ok(users);
     }
-    
-    @DeleteMapping("/barber/{barberId}")
-    public ResponseEntity<?> deleteBarber(@PathVariable String barberId) {
-        try {
-            userService.deleteBarber(barberId);
-            return ResponseEntity.ok("Barber deleted successfully");
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
 }

@@ -175,17 +175,6 @@ public class UserServiceImpl implements UserService {
                 })
                 .collect(Collectors.toList());
     }
-    
-    @Override
-    public void deleteBarber(String id) throws Exception {
-        Optional<User> barber = userRepository.findById(id);
-
-        if (barber.isEmpty()) {
-            throw new Exception("Barber not found");
-        }
-
-        userRepository.deleteById(id);
-    }
 
 
 }

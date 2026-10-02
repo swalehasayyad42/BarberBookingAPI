@@ -43,7 +43,6 @@ public class ShopServiceServiceImpl implements ShopServiceService {
         newService.setName(serviceRequest.getName());
         newService.setRate(serviceRequest.getRate());
         newService.setShop(shop); // Associate the service with the shop
-        newService.setDuration(serviceRequest.getDuration());
 
         // Save the new service to the database
         ShopService savedService = serviceRepository.save(newService);
@@ -53,7 +52,7 @@ public class ShopServiceServiceImpl implements ShopServiceService {
         }
 
         // Return the saved service details as a ServiceTO object
-        return new ServiceTO(savedService.getId(), savedService.getName(), savedService.getRate(), savedService.getShop().getId(),savedService.getDuration());
+        return new ServiceTO(savedService.getId(), savedService.getName(), savedService.getRate(), savedService.getShop().getId());
     }
 
 
@@ -77,8 +76,7 @@ public class ShopServiceServiceImpl implements ShopServiceService {
                     return new ServiceTO(service.getId(),
                             service.getName(),
                             service.getRate(),
-                            service.getShop().getId(),
-                    		service.getDuration());
+                            service.getShop().getId());
                 })
                 .collect(Collectors.toList());
     }
@@ -107,16 +105,5 @@ public class ShopServiceServiceImpl implements ShopServiceService {
 //        // Returning ServiceTO with updated details
 //        return new ServiceTO(updatedService.getId(), updatedService.getName(), updatedService.getRate(), updatedService.getShop());
 //    }
-	
-	@Override
-    public void deleteService(String serviceId) throws Exception {
-        Optional<dev.swaleha.bookmysalonappointment.entity.ShopService> service = serviceRepository.findById(serviceId);
-
-        if (service.isEmpty()) {
-            throw new Exception("Service not found");
-        }
-
-        serviceRepository.deleteById(serviceId);
-    }
 
 }

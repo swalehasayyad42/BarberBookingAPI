@@ -14,6 +14,4 @@ public interface ShopServiceService {
     List<ServiceTO> findByShopId(String shopId) throws Exception;
 
     ServiceTO updateServicePrice(String serviceId, int newPrice) throws Exception;
-    
-    void deleteService(String id) throws Exception;
 }

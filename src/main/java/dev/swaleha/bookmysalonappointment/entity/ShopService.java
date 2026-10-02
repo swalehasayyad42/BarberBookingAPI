@@ -10,19 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class ShopService {
     @Id
     private String id;
-    
-    @Field("duration")
-    private int duration;
 
-    public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-	@Field("name")
+    @Field("name")
     private String name;
 
     @Field("rate")

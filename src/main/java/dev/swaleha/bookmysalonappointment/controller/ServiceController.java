@@ -48,14 +48,4 @@ public class ServiceController {
 
         return ResponseEntity.ok(updatedService);
     }
-    
-    @DeleteMapping("/{serviceId}")
-    public ResponseEntity<?> deleteService(@PathVariable String serviceId) {
-        try {
-        	serviceService.deleteService(serviceId);
-            return ResponseEntity.ok("Service deleted successfully");
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
 }

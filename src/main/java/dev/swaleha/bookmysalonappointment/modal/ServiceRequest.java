@@ -4,17 +4,8 @@ public class ServiceRequest {
     private String name;
     private int rate;
     private String shopId;
-    private int duration;
 
-    public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-	public String getShopId() {
+    public String getShopId() {
         return shopId;
     }
 
