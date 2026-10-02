@@ -51,4 +51,15 @@ public class ShopService {
     public void setShop(Shop shop) {
         this.shop = shop;
     }
+    
+    @Field("duration")
+    private int duration = 30;
+
+    public int getDuration() {
+       return duration > 0 ? duration : 30;
+    }
+
+    public void setDuration(int duration) {
+       this.duration = duration;
+    }
 }
